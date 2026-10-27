@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "01-system-use-cases",
+    "title": "01  系统用例图 · 总览",
+    "subtitle": "系统边界包含 Vue 前端、Express 查询服务与两份智能合约；角色表示使用条件，同一钱包可承担多个角色。",
+    "semantic_nodes": 14
+  },
+  {
+    "slug": "02-market-use-cases",
+    "title": "02  市场交易用例图 · 明细",
+    "subtitle": "前置条件：连接目标网络的钱包。卖家须持有 NFT；出价者须为非持有者；提现者须有可提取余额。",
+    "semantic_nodes": 10
+  },
+  {
+    "slug": "03-overall-activity",
+    "title": "03  系统使用总流程与交易确认",
+    "subtitle": "活动图 · 初次浏览无需钱包；从铸造、买卖、出价、转赠或管理入口发起链上操作。",
+    "semantic_nodes": 14
+  },
+  {
+    "slug": "04-wallet-activity",
+    "title": "04  连接与断开钱包",
+    "subtitle": "活动图 · 支持 MetaMask 与本地体验账户；本地体验账户仅能用于 localhost／127.0.0.1 的 Hardhat 31337 网络。",
+    "semantic_nodes": 12
+  },
+  {
+    "slug": "05-mint-activity",
+    "title": "05  铸造 NFT",
+    "subtitle": "活动图 · 前置条件：钱包已连接目标链；合约 NetPunks 负责最终校验与发行。",
+    "semantic_nodes": 10
+  },
+  {
+    "slug": "06-listing-activity",
+    "title": "06  上架、改价与取消挂单",
+    "subtitle": "活动图 · 前置条件：当前钱包持有 NFT；上架与接受出价仅在未授权时先发起单枚 NFT 授权交易。",
+    "semantic_nodes": 14
+  },
+  {
+    "slug": "07-buy-activity",
+    "title": "07  按挂单价购买 NFT",
+    "subtitle": "活动图 · 前置条件：钱包已连接；买家不是当前卖家；若为指定买家挂单，钱包地址必须匹配。",
+    "semantic_nodes": 10
+  },
+  {
+    "slug": "08-bid-activity",
+    "title": "08  提交、提高与撤回出价",
+    "subtitle": "活动图 · 每枚已铸造 NFT 仅保留一笔最高出价；出价 ETH 托管在市场合约，持有者不能给自己的 NFT 出价。",
+    "semantic_nodes": 13
+  },
+  {
+    "slug": "09-accept-bid-activity",
+    "title": "09  持有者接受最高出价",
+    "subtitle": "活动图 · 前置条件：连接当前持有者钱包；详情中存在有效最高出价；市场须获 NFT 转移授权。",
+    "semantic_nodes": 12
+  },
+  {
+    "slug": "10-withdraw-activity",
+    "title": "10  提取市场余额",
+    "subtitle": "活动图 · 提现入口在“我的收藏”；市场成交收入与退回出价统一累计在 pendingWithdrawals。",
+    "semantic_nodes": 12
+  },
+  {
+    "slug": "11-transfer-activity",
+    "title": "11  转赠 NFT",
+    "subtitle": "活动图 · 前置条件：钱包为当前持有者；转赠直接调用 ERC-721 safeTransferFrom，不经市场售卖。",
+    "semantic_nodes": 9
+  },
+  {
+    "slug": "12-admin-activity",
+    "title": "12  发行管理与提取铸造收入",
+    "subtitle": "活动图 · 前置条件：连接 NetPunks 合约 owner 钱包；前端入口控制之外，合约执行 onlyOwner 权限校验。",
+    "semantic_nodes": 12
+  },
+  {
+    "slug": "13-netpunks-contract-flow",
+    "title": "13  NetPunks 智能合约流程图",
+    "subtitle": "按函数分区：每个分区表示独立调用，编号不代表执行顺序；判断、状态更新和回滚均依据当前合约源码。",
+    "semantic_nodes": 40
+  },
+  {
+    "slug": "14-market-contract-flow",
+    "title": "14  NetPunksMarket 智能合约流程图",
+    "subtitle": "按函数分区：每个分区表示独立调用，编号不代表执行顺序；判断、状态更新和回滚均依据当前合约源码。",
+    "semantic_nodes": 58
+  }
+]

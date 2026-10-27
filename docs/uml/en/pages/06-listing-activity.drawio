@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="06-listing-activity" name="06  List, Reprice, and Cancel a Listing">
+    <mxGraphModel dx="1740" dy="1660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1660" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="06  List, Reprice, and Cancel a Listing" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontColor=#162b42;spacing=0;fontFamily=Arial;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Activity diagram · Precondition: current NFT holder. Listing and bid acceptance request single-token approval only when needed." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;aspect=fixed;fillColor=#162b42;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="825" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="entry" value="User · Choose an action in NFT details" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="operation" value="List / reprice,&lt;br&gt;or cancel?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="390" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="form" value="User · Enter a positive price&lt;br&gt;Optional buyer address must not be self" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="550" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="approved" value="Market already&lt;br&gt;approved?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="710" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="approve" value="Confirm approve(market, id)&lt;br&gt;This NFT only (Diagram 03)" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="720" width="390" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="list" value="Confirm list(id, price, onlyBuyer)&lt;br&gt;Check ownership, price, approval" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="930" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="approved-merge" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#ffffff;strokeColor=#486a90;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="820" y="860" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="listed" value="Market · Create / replace listing&lt;br&gt;Snapshot ownership / approval versions" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1110" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel" value="Confirm cancelListing(id)&lt;br&gt;Only the recorded seller may cancel" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="550" width="390" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cancelled" value="Market · Delete listing&lt;br&gt;Keep NFT ownership and existing bid" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="760" width="390" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="refresh" value="Frontend · Refresh listing and NFT details" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1280" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="result-merge" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#ffffff;strokeColor=#486a90;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="825" y="1220" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1430" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-start-entry" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="start" target="entry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-entry-operation" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="entry" target="operation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-operation-form" value="[List / reprice]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="operation" target="form">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-operation-cancel" value="[Cancel]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="operation" target="cancel">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="445" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-form-approved" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="form" target="approved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-approved-approve" value="[No]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="approved" target="approve">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-approved-approved-merge" value="[Yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="approved" target="approved-merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-approve-approved-merge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="approve" target="approved-merge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1435" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-approved-merge-list" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="approved-merge" target="list">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-list-listed" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="list" target="listed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-listed-result-merge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="listed" target="result-merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-result-merge-refresh" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="result-merge" target="refresh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refresh-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="refresh" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cancel-cancelled" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="cancel" target="cancelled">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cancelled-result-merge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="cancelled" target="result-merge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="1235" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="listing-rules" value="Listing Validity&lt;br&gt;&lt;br&gt;A purchase rechecks seller ownership, approval, and recorded version snapshots.&lt;br&gt;&lt;br&gt;A transfer invalidates the old listing. Transferring away and back does not restore it.&lt;br&gt;&lt;br&gt;Approval changes can invalidate a listing. Reapproval alone does not restore it; list again." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="970" width="410" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="● Initial  |  ◉ Activity final  |  Rounded box: action  |  Diamond: decision / merge  |  [ ]: guard  |  Rake marker: call behavior action" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1565" width="1600" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="convention" value="Blue: action  |  Yellow: decision  |  Green: result  |  Red: failure. Confirm transactions as in Diagram 03; checks use execution-time state." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1599" width="1600" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

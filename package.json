@@ -1,0 +1,48 @@
+{
+  "name": "netpunks",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "vite --host 127.0.0.1",
+    "dev:api": "node --env-file-if-exists=.env server/index.js",
+    "chain": "hardhat node --hostname 127.0.0.1",
+    "compile": "hardhat compile",
+    "deploy:local": "node --env-file-if-exists=.env scripts/deploy.mjs",
+    "sepolia:setup": "node scripts/setup-sepolia.mjs",
+    "sepolia:check": "npm run compile && node --env-file-if-exists=.env.sepolia scripts/deploy-sepolia.mjs --dry-run",
+    "deploy:sepolia": "npm run compile && node --env-file-if-exists=.env.sepolia scripts/deploy-sepolia.mjs --deploy",
+    "dev:sepolia": "node --env-file-if-exists=.env.sepolia scripts/dev-sepolia.mjs",
+    "start:sepolia": "NODE_ENV=production APP_NETWORK=sepolia node --env-file-if-exists=.env.sepolia server/index.js",
+    "build": "vite build",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env server/index.js",
+    "test": "npm run compile && node --test test/*.test.js",
+    "export:assets": "node scripts/export-assets.mjs",
+    "sepolia:classroom": "node scripts/prepare-sepolia-classroom.mjs && npm run compile",
+    "start:hosted": "node scripts/start-hosted.mjs",
+    "hosting:package": "npm run build && node scripts/package-hosting.mjs"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.0",
+    "@fontsource/space-grotesk": "^5.2.0",
+    "@phosphor-icons/vue": "^2.2.1",
+    "ethers": "^6.15.0",
+    "express": "^5.3.0",
+    "vue": "^3.5.44"
+  },
+  "overrides": {
+    "tmp": "0.2.7"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.2.1",
+    "@openzeppelin/contracts": "5.6.1",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "hardhat": "^3.20.0",
+    "solc": "0.8.37",
+    "vite": "^8.3.4"
+  }
+}

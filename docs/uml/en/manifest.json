@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "01-system-use-cases",
+    "title": "01  System Use Cases · Overview",
+    "subtitle": "The system boundary includes Vue, the Express query service, and both smart contracts. One wallet may fulfill several roles.",
+    "semantic_nodes": 14
+  },
+  {
+    "slug": "02-market-use-cases",
+    "title": "02  Market Use Cases · Details",
+    "subtitle": "Precondition: a wallet on the target chain. Sellers own the NFT; bidders do not. Withdrawal requires a pending balance.",
+    "semantic_nodes": 10
+  },
+  {
+    "slug": "03-overall-activity",
+    "title": "03  Overall Usage and Transaction Confirmation",
+    "subtitle": "Activity diagram · Public browsing needs no wallet. Minting, trading, bidding, transfers, and administration use on-chain transactions.",
+    "semantic_nodes": 14
+  },
+  {
+    "slug": "04-wallet-activity",
+    "title": "04  Connect and Disconnect a Wallet",
+    "subtitle": "Activity diagram · MetaMask or local demo accounts. Demo mode requires localhost / 127.0.0.1 and Hardhat chain 31337.",
+    "semantic_nodes": 12
+  },
+  {
+    "slug": "05-mint-activity",
+    "title": "05  Mint NFTs",
+    "subtitle": "Activity diagram · Precondition: wallet connected to the target chain. NetPunks performs final validation and issuance.",
+    "semantic_nodes": 10
+  },
+  {
+    "slug": "06-listing-activity",
+    "title": "06  List, Reprice, and Cancel a Listing",
+    "subtitle": "Activity diagram · Precondition: current NFT holder. Listing and bid acceptance request single-token approval only when needed.",
+    "semantic_nodes": 14
+  },
+  {
+    "slug": "07-buy-activity",
+    "title": "07  Buy an NFT at the Listed Price",
+    "subtitle": "Activity diagram · Precondition: connected buyer is not the seller. A private listing requires the designated buyer address.",
+    "semantic_nodes": 10
+  },
+  {
+    "slug": "08-bid-activity",
+    "title": "08  Place, Raise, and Withdraw a Bid",
+    "subtitle": "Activity diagram · One highest bid per minted NFT. Full ETH escrow is held by the market; holders cannot bid on their own NFT.",
+    "semantic_nodes": 13
+  },
+  {
+    "slug": "09-accept-bid-activity",
+    "title": "09  Accept the Highest Bid",
+    "subtitle": "Activity diagram · Precondition: current holder's wallet, an active highest bid, and approval for the market to transfer the NFT.",
+    "semantic_nodes": 12
+  },
+  {
+    "slug": "10-withdraw-activity",
+    "title": "10  Withdraw Market Funds",
+    "subtitle": "Activity diagram · Entry: My Collection. Market proceeds and refunded bids accumulate in pendingWithdrawals.",
+    "semantic_nodes": 12
+  },
+  {
+    "slug": "11-transfer-activity",
+    "title": "11  Transfer an NFT",
+    "subtitle": "Activity diagram · Precondition: current holder's wallet. A gift transfer uses ERC-721 safeTransferFrom directly.",
+    "semantic_nodes": 9
+  },
+  {
+    "slug": "12-admin-activity",
+    "title": "12  Mint Administration and Proceeds",
+    "subtitle": "Activity diagram · Precondition: NetPunks owner wallet. The contract enforces onlyOwner in addition to the frontend gate.",
+    "semantic_nodes": 12
+  },
+  {
+    "slug": "13-netpunks-contract-flow",
+    "title": "13  NetPunks contract flowchart",
+    "subtitle": "Each panel is an independent function flow, not a sequential or parallel stage. Checks, effects and rollback follow the current source.",
+    "semantic_nodes": 40
+  },
+  {
+    "slug": "14-market-contract-flow",
+    "title": "14  NetPunksMarket contract flowchart",
+    "subtitle": "Each panel is an independent function flow, not a sequential or parallel stage. Checks, effects and rollback follow the current source.",
+    "semantic_nodes": 58
+  }
+]

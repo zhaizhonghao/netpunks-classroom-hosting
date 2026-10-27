@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="11-transfer-activity" name="11  转赠 NFT">
+    <mxGraphModel dx="1740" dy="1470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1470" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="11  转赠 NFT" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=32;fontStyle=1;fontColor=#162b42;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="活动图 · 前置条件：钱包为当前持有者；转赠直接调用 ERC-721 safeTransferFrom，不经市场售卖。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;aspect=fixed;fillColor=#162b42;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="825" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="entry" value="持有者 · 在 NFT 详情点击赠送&lt;br&gt;填写有效且非零的接收地址" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="send" value="提交并确认 safeTransferFrom&lt;br&gt;(当前钱包, 接收地址, id)" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="430" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="valid" value="持有权限与接收校验通过？" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="690" y="730" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="move" value="NFT 合约 · 更新持有者与所有权版本&lt;br&gt;原市场挂单随之失效" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="950" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="refresh" value="前端 · 刷新双方资产归属与市场状态&lt;br&gt;不产生售卖收入" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1130" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1300" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="failure" value="地址、所有权或接收能力不满足&lt;br&gt;交易回滚，NFT 保留原归属" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#fbeeee;strokeColor=#b87676;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="740" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="failure-end" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="895" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-valid-failure" value="[不通过]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="valid" target="failure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-failure-failure-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="failure" target="failure-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-start-entry" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="start" target="entry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-entry-send" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="entry" target="send">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-send-valid" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="send" target="valid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-valid-move" value="[通过]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="valid" target="move">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-move-refresh" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="move" target="refresh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refresh-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="refresh" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="transfer-rules" value="转赠后的状态&lt;br&gt;&lt;br&gt;转赠不自动撤回已有最高出价；&lt;br&gt;出价者仍可主动撤回。&lt;br&gt;&lt;br&gt;新持有者可在满足条件时接受出价，&lt;br&gt;或自行授权并重新上架。&lt;br&gt;&lt;br&gt;向合约地址转赠时，该合约必须&lt;br&gt;支持 ERC-721 安全接收。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="430" width="370" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="● 初始节点    ◉ 活动终止    圆角框：动作    菱形：判断／合并    [ ]：分支条件    带耙形标记的框：调用子活动" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1375" width="1600" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="convention" value="蓝：操作   黄：判断   绿：成功结果   红：失败处理；“交易确认”均遵循图 03，链上校验以交易执行时状态为准。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1409" width="1600" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

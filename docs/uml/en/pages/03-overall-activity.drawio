@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="03-overall-activity" name="03  Overall Usage and Transaction Confirmation">
+    <mxGraphModel dx="1740" dy="1660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1660" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03  Overall Usage and Transaction Confirmation" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontColor=#162b42;spacing=0;fontFamily=Arial;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Activity diagram · Public browsing needs no wallet. Minting, trading, bidding, transfers, and administration use on-chain transactions." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;aspect=fixed;fillColor=#162b42;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="825" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="browse" value="User · Browse market, details, activity&lt;br&gt;Search / filter / sort / paginate" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="need-tx" value="On-chain action&lt;br&gt;needed?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="390" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="public" value="User · Save favorites or change&lt;br&gt;language / theme locally" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="400" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="public-end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="545" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="connect" value="User · Connect or verify wallet / chain&lt;br&gt;(Connection flow: Diagram 04)" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="550" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="choose" value="User · Choose an action; check inputs&lt;br&gt;(Business rules: Diagrams 05–12)" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="690" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="confirm" value="Wallet · Confirm and submit transaction&lt;br&gt;Wait for its receipt" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="830" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="confirmed" value="Transaction&lt;br&gt;succeeded?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="970" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="refresh" value="Frontend · Request refresh&lt;br&gt;Express syncs the index; reload state" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1140" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="done" value="Frontend · Display updated result" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1290" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1430" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="failure" value="Frontend · Explain rejection / failure&lt;br&gt;User corrects or refreshes, then retries" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#fbeeee;strokeColor=#b87676;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="980" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="failure-end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="1135" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-confirmed-failure" value="[No / rejected / error]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="confirmed" target="failure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-failure-failure-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="failure" target="failure-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-start-browse" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="start" target="browse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-browse-need-tx" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="browse" target="need-tx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-need-tx-public" value="[No]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="need-tx" target="public">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-public-public-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="public" target="public-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-need-tx-connect" value="[Yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="need-tx" target="connect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-connect-choose" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="connect" target="choose">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-choose-confirm" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="choose" target="confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-confirm-confirmed" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="confirm" target="confirmed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-confirmed-refresh" value="[Yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="confirmed" target="refresh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refresh-done" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="refresh" target="done">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-done-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="done" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="public-note" value="Public Queries and Preferences&lt;br&gt;&lt;br&gt;The browsing API returns minted assets and their state.&lt;br&gt;&lt;br&gt;Switch instantly between Simplified Chinese and English. Favorites, theme, and language use localStorage.&lt;br&gt;&lt;br&gt;After connection, query assets, listings, and bids for the current wallet." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="260" width="370" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="tx-note" value="Shared Transaction Rules&lt;br&gt;&lt;br&gt;The wallet may reject confirmation. Chain, balance, or contract checks may prevent execution.&lt;br&gt;&lt;br&gt;A reverted transaction leaves its business state unchanged; an on-chain failure may still cost gas.&lt;br&gt;&lt;br&gt;Approval is a separate transaction. A later failure does not undo an approval that succeeded.&lt;br&gt;&lt;br&gt;If confirmation succeeds but refresh fails, reload and verify the state before retrying." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="760" width="370" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="● Initial  |  ◉ Activity final  |  Rounded box: action  |  Diamond: decision / merge  |  [ ]: guard  |  Rake marker: call behavior action" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1565" width="1600" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="convention" value="Blue: action  |  Yellow: decision  |  Green: result  |  Red: failure. Confirm transactions as in Diagram 03; checks use execution-time state." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1599" width="1600" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

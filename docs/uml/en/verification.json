@@ -1,0 +1,22 @@
+{
+  "english_pages": 12,
+  "png_verified": 12,
+  "svg_with_editable_xml": 12,
+  "offline_text_descriptions": 12,
+  "structural_validation": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "translation_coverage": "all diagram and gallery labels",
+  "graph_parity": "node and relationship IDs match the Chinese original",
+  "chinese_original_files_preserved_at_english_edition_creation": 43,
+  "language_switch": {
+    "controls": "fixed Simplified Chinese / English buttons",
+    "verified_directions": [
+      "zh-CN to en",
+      "en to zh-CN"
+    ],
+    "current_diagram_preserved": "05-mint-activity",
+    "matching_downloads": true
+  }
+}

@@ -1,0 +1,763 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="13-netpunks-contract-flow" name="13  NetPunks contract flowchart">
+    <mxGraphModel page="1" pageScale="1" pageWidth="1740" pageHeight="2220" grid="1" gridSize="10" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="13  NetPunks contract flowchart" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=30;fontColor=#486078;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="30" width="1640" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Each panel is an independent function flow, not a sequential or parallel stage. Checks, effects and rollback follow the current source." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=17;fontColor=#486078;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="1640" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="deployment" value="constructor(base): deployer becomes owner; fixed supply 10,000 and lifetime wallet cap 5; minting opens at 0.005 ETH; save base URI." style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=17;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="155" width="1640" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="50" y="290" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-title" value="01  Mint NFTs" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="mint-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-entry" value="mint(quantity) · payable · nonReentrant" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="mint-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-checks" value="Minting open; quantity is 1–5&lt;br&gt;Lifetime wallet mints + quantity ≤ 5&lt;br&gt;Total minted + quantity ≤ 10,000&lt;br&gt;msg.value = current price × quantity" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="mint-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="mint-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="mint-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-effects" value="Reserve IDs and increase totalMinted&lt;br&gt;Increase lifetime quota and mintProceeds&lt;br&gt;Loop: _safeMint(msg.sender, id)&lt;br&gt;Emit Transfer and Minted for each NFT&lt;br&gt;_update increases ownershipVersion" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="mint-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mint-entry-mint-checks" value="" edge="1" parent="1" source="mint-entry" target="mint-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mint-checks-mint-valid" value="" edge="1" parent="1" source="mint-checks" target="mint-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mint-valid-mint-failure" value="[No]" edge="1" parent="1" source="mint-valid" target="mint-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mint-valid-mint-effects" value="[Yes]" edge="1" parent="1" source="mint-valid" target="mint-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-outcome" value="All safe mints successful?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="mint-panel">
+          <mxGeometry x="50" y="695" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mint-result" value="Minter owns the NFTs&lt;br&gt;Commit the entire transaction" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="mint-panel">
+          <mxGeometry x="25" y="810" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mint-effects-mint-outcome" value="" edge="1" parent="1" source="mint-effects" target="mint-outcome" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mint-outcome-mint-result" value="[Yes]" edge="1" parent="1" source="mint-outcome" target="mint-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mint-outcome-mint-failure" value="[No]" edge="1" parent="1" source="mint-outcome" target="mint-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505.0" y="1025.0" />
+              <mxPoint x="505.0" y="775.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mint-source" value="NetPunks.sol:37–51" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="mint-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="600" y="290" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-title" value="02  Change mint settings" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="settings-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-entry" value="setMintSettings(open, price)" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="settings-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-checks" value="onlyOwner: caller must be current owner&lt;br&gt;A zero mint price is allowed&lt;br&gt;Supply and lifetime limits stay fixed" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="settings-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="settings-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="settings-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-effects" value="mintOpen = open&lt;br&gt;mintPrice = price&lt;br&gt;Emit MintSettingsChanged&lt;br&gt;Affects future mints, not market listings" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="settings-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-settings-entry-settings-checks" value="" edge="1" parent="1" source="settings-entry" target="settings-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-settings-checks-settings-valid" value="" edge="1" parent="1" source="settings-checks" target="settings-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-settings-valid-settings-failure" value="[No]" edge="1" parent="1" source="settings-valid" target="settings-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-settings-valid-settings-effects" value="[Yes]" edge="1" parent="1" source="settings-valid" target="settings-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-result" value="New mint availability and price apply" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="settings-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-settings-effects-settings-result" value="" edge="1" parent="1" source="settings-effects" target="settings-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="settings-source" value="NetPunks.sol:54–58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="settings-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="290" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-title" value="03  Withdraw mint proceeds" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-entry" value="withdrawMintProceeds() · nonReentrant" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-checks" value="onlyOwner: caller must be current owner&lt;br&gt;amount = mintProceeds&lt;br&gt;Require amount &amp;gt; 0; else NothingToWithdraw" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-effects" value="Zero mintProceeds first&lt;br&gt;Then call owner() with amount ETH&lt;br&gt;These proceeds come from NFT minting" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-proceeds-entry-proceeds-checks" value="" edge="1" parent="1" source="proceeds-entry" target="proceeds-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-proceeds-checks-proceeds-valid" value="" edge="1" parent="1" source="proceeds-checks" target="proceeds-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-proceeds-valid-proceeds-failure" value="[No]" edge="1" parent="1" source="proceeds-valid" target="proceeds-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-proceeds-valid-proceeds-effects" value="[Yes]" edge="1" parent="1" source="proceeds-valid" target="proceeds-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-outcome" value="ETH payment successful?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="50" y="695" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="proceeds-result" value="Emit MintProceedsWithdrawn&lt;br&gt;Owner receives the mint proceeds" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="25" y="810" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-proceeds-effects-proceeds-outcome" value="" edge="1" parent="1" source="proceeds-effects" target="proceeds-outcome" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-proceeds-outcome-proceeds-result" value="[Yes]" edge="1" parent="1" source="proceeds-outcome" target="proceeds-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-proceeds-outcome-proceeds-failure" value="[No]" edge="1" parent="1" source="proceeds-outcome" target="proceeds-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1605.0" y="1025.0" />
+              <mxPoint x="1605.0" y="775.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="proceeds-source" value="NetPunks.sol:60–67" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="proceeds-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1210" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-title" value="04  Approvals and ownership versions" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="erc721-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-entry" value="approve / setApprovalForAll / transfer" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="erc721-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-checks" value="Apply the relevant ERC-721 checks&lt;br&gt;approve: owner or approved operator&lt;br&gt;Transfer: owner, approved user or operator&lt;br&gt;Safe transfers also check the recipient" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="erc721-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="erc721-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="erc721-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-effects" value="Successful approve: approvalVersion[id]++&lt;br&gt;Successful setApprovalForAll:&lt;br&gt;operatorVersion[owner][operator]++&lt;br&gt;Successful _update (mint / transfer):&lt;br&gt;ownershipVersion[id]++" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="erc721-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-erc721-entry-erc721-checks" value="" edge="1" parent="1" source="erc721-entry" target="erc721-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-erc721-checks-erc721-valid" value="" edge="1" parent="1" source="erc721-checks" target="erc721-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-erc721-valid-erc721-failure" value="[No]" edge="1" parent="1" source="erc721-valid" target="erc721-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-erc721-valid-erc721-effects" value="[Yes]" edge="1" parent="1" source="erc721-valid" target="erc721-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-result" value="Approval / ownership updated&lt;br&gt;Old-version market listings become invalid" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="erc721-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-erc721-effects-erc721-result" value="" edge="1" parent="1" source="erc721-effects" target="erc721-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="erc721-source" value="NetPunks.sol:71–86; ERC721" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="erc721-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1210" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-title" value="05  Two-step ownership handover" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-entry" value="transferOwnership(newOwner)" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-owner" value="Caller is the owner?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="50" y="175" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-failure" value="revert&lt;br&gt;Roll back that call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="390" y="180" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-pending" value="pendingOwner = newOwner&lt;br&gt;Emit OwnershipTransferStarted&lt;br&gt;Current owner remains unchanged" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="25" y="320" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-accept" value="Candidate sends a separate acceptOwnership()&lt;br&gt;Dashed edge: a later, independent transaction" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="25" y="470" width="330" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-candidate" value="Caller is pendingOwner?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="50" y="600" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ownership-result" value="Set owner to candidate; clear pendingOwner&lt;br&gt;Emit OwnershipTransferred" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ownership-entry-ownership-owner" value="" edge="1" parent="1" source="ownership-entry" target="ownership-owner" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ownership-owner-ownership-pending" value="[Yes]" edge="1" parent="1" source="ownership-owner" target="ownership-pending" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ownership-owner-ownership-failure" value="[No]" edge="1" parent="1" source="ownership-owner" target="ownership-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ownership-pending-ownership-accept" value="" edge="1" parent="1" source="ownership-pending" target="ownership-accept" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ownership-accept-ownership-candidate" value="" edge="1" parent="1" source="ownership-accept" target="ownership-candidate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ownership-candidate-ownership-result" value="[Yes]" edge="1" parent="1" source="ownership-candidate" target="ownership-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ownership-candidate-ownership-failure" value="[No]" edge="1" parent="1" source="ownership-candidate" target="ownership-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1055.0" y="1860.0" />
+              <mxPoint x="1055.0" y="1510.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ownership-source" value="OpenZeppelin Ownable2Step / Ownable" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="ownership-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="read-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="1210" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="read-title" value="06  Query NFTs and metadata" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="read-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="read-entry" value="ownerOf(id) / tokenURI(id) · view" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="read-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="read-checks" value="These ERC-721 queries require an NFT&lt;br&gt;that already exists; otherwise they revert&lt;br&gt;The metadata base URI is set at deployment&lt;br&gt;No external base-URI setter is provided" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="read-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="read-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="read-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="read-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="read-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="read-effects" value="ownerOf: read the current owner&lt;br&gt;tokenURI: base URI + decimal token ID&lt;br&gt;An empty base URI yields an empty tokenURI&lt;br&gt;No ownership, quota or funds are changed" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="read-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-read-entry-read-checks" value="" edge="1" parent="1" source="read-entry" target="read-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-read-checks-read-valid" value="" edge="1" parent="1" source="read-checks" target="read-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-read-valid-read-failure" value="[No]" edge="1" parent="1" source="read-valid" target="read-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-read-valid-read-effects" value="[Yes]" edge="1" parent="1" source="read-valid" target="read-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="read-result" value="Return the query result&lt;br&gt;Other public getters expose settings" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="read-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-read-effects-read-result" value="" edge="1" parent="1" source="read-effects" target="read-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="read-source" value="NetPunks.sol:69; ERC721" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="read-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="Blue: read / action. Yellow: decision. Green: return / success. Red: revert. Panels have independent entry points; numbering is an index." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#486078;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="2105" width="1640" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="atomicity" value="Any failing step reverts state, transfers and logs in that transaction. A prior approval in a separate transaction remains. Source: contracts/; 2026-10-20." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontColor=#486078;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="2150" width="1640" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="14-market-contract-flow" name="14  NetPunksMarket contract flowchart">
+    <mxGraphModel page="1" pageScale="1" pageWidth="1740" pageHeight="3140" grid="1" gridSize="10" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="14  NetPunksMarket contract flowchart" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=30;fontColor=#486078;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="30" width="1640" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Each panel is an independent function flow, not a sequential or parallel stage. Checks, effects and rollback follow the current source." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=17;fontColor=#486078;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="1640" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="deployment" value="constructor(collection): store the immutable NFT reference. The market has no issuance-admin privileges. NR = nonReentrant." style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=17;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="155" width="1640" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="50" y="290" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-title" value="01  Read a valid listing" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="listing-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-entry" value="getListing(id) · view" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="listing-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-checks" value="A seller is recorded and still owns the NFT&lt;br&gt;Ownership version matches the snapshot&lt;br&gt;Token-approval version matches&lt;br&gt;Operator-approval version matches&lt;br&gt;Market still has transfer approval" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="listing-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="listing-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-failure" value="Return empty listing&lt;br&gt;No storage change" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="listing-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-effects" value="Return stored seller / price / onlyBuyer&lt;br&gt;and the three version snapshots&lt;br&gt;This query does not delete stale listings" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="listing-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-listing-entry-listing-checks" value="" edge="1" parent="1" source="listing-entry" target="listing-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-listing-checks-listing-valid" value="" edge="1" parent="1" source="listing-checks" target="listing-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-listing-valid-listing-failure" value="[No]" edge="1" parent="1" source="listing-valid" target="listing-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-listing-valid-listing-effects" value="[Yes]" edge="1" parent="1" source="listing-valid" target="listing-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-result" value="The valid listing can be used by buy()" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="listing-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-listing-effects-listing-result" value="" edge="1" parent="1" source="listing-effects" target="listing-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="listing-source" value="NetPunksMarket.sol:41–49" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="listing-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="list-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="600" y="290" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="list-title" value="02  List or reprice" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="list-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="list-entry" value="list(id, price, onlyBuyer)" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="list-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="list-checks" value="Caller is the current NFT owner&lt;br&gt;price &amp;gt; 0&lt;br&gt;onlyBuyer must not equal the seller&lt;br&gt;Market has token or operator approval" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="list-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="list-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="list-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="list-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="list-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="list-effects" value="Write / replace the listing and buyer rule&lt;br&gt;Snapshot the ownership, token-approval&lt;br&gt;and operator-approval versions&lt;br&gt;The seller keeps custody of the NFT" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="list-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-list-entry-list-checks" value="" edge="1" parent="1" source="list-entry" target="list-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-list-checks-list-valid" value="" edge="1" parent="1" source="list-checks" target="list-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-list-valid-list-failure" value="[No]" edge="1" parent="1" source="list-valid" target="list-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-list-valid-list-effects" value="[Yes]" edge="1" parent="1" source="list-valid" target="list-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="list-result" value="Emit Listed&lt;br&gt;Public or buyer-restricted listing is active" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="list-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-list-effects-list-result" value="" edge="1" parent="1" source="list-effects" target="list-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="list-source" value="NetPunksMarket.sol:51–58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="list-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="290" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-title" value="03  Cancel a listing" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="cancel-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-entry" value="cancelListing(id)" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="cancel-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-checks" value="Caller matches the stored listing seller&lt;br&gt;Current NFT ownership is not required&lt;br&gt;Otherwise revert with NotOwner" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="cancel-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="cancel-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="cancel-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-effects" value="Delete listings[id]&lt;br&gt;Do not move the NFT or change its bid&lt;br&gt;Do not transfer ETH" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="cancel-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cancel-entry-cancel-checks" value="" edge="1" parent="1" source="cancel-entry" target="cancel-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cancel-checks-cancel-valid" value="" edge="1" parent="1" source="cancel-checks" target="cancel-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cancel-valid-cancel-failure" value="[No]" edge="1" parent="1" source="cancel-valid" target="cancel-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cancel-valid-cancel-effects" value="[Yes]" edge="1" parent="1" source="cancel-valid" target="cancel-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-result" value="Emit ListingCancelled" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="cancel-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cancel-effects-cancel-result" value="" edge="1" parent="1" source="cancel-effects" target="cancel-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel-source" value="NetPunksMarket.sol:60–64" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="cancel-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1210" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-title" value="04  Buy at the listed price" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="buy-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-entry" value="buy(id, expectedPrice) · payable · NR" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="buy-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-checks" value="getListing(id) returns a valid listing&lt;br&gt;Listing price = expectedPrice = msg.value&lt;br&gt;Caller is not the seller&lt;br&gt;Buyer is unrestricted or caller matches" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="buy-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="buy-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="buy-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-effects" value="Delete the listing&lt;br&gt;Call _refundBid(id) for any old bid&lt;br&gt;Seller pendingWithdrawals += msg.value&lt;br&gt;safeTransferFrom: seller → buyer" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="buy-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buy-entry-buy-checks" value="" edge="1" parent="1" source="buy-entry" target="buy-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buy-checks-buy-valid" value="" edge="1" parent="1" source="buy-checks" target="buy-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buy-valid-buy-failure" value="[No]" edge="1" parent="1" source="buy-valid" target="buy-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buy-valid-buy-effects" value="[Yes]" edge="1" parent="1" source="buy-valid" target="buy-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-outcome" value="Safe NFT transfer successful?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="buy-panel">
+          <mxGeometry x="50" y="695" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-result" value="Emit Purchased&lt;br&gt;Seller and refunded bidder withdraw later" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="buy-panel">
+          <mxGeometry x="25" y="810" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buy-effects-buy-outcome" value="" edge="1" parent="1" source="buy-effects" target="buy-outcome" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buy-outcome-buy-result" value="[Yes]" edge="1" parent="1" source="buy-outcome" target="buy-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buy-outcome-buy-failure" value="[No]" edge="1" parent="1" source="buy-outcome" target="buy-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505.0" y="1945.0" />
+              <mxPoint x="505.0" y="1695.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="buy-source" value="NetPunksMarket.sol:66–77" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="buy-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1210" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-title" value="05  Place or raise a bid" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="bid-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-entry" value="placeBid(id) · payable · NR" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="bid-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-checks" value="NFT exists; caller is not its current owner&lt;br&gt;msg.value &amp;gt; 0&lt;br&gt;msg.value &amp;gt; the current highest bid&lt;br&gt;Raising your own bid also pays the full amount" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="bid-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="bid-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="bid-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-effects" value="Call _refundBid(id) for the old bid&lt;br&gt;Set bids[id] = (caller, msg.value)&lt;br&gt;Keep the new ETH escrowed in the market&lt;br&gt;Credit the old bid to its bidder for withdrawal" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="bid-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-bid-entry-bid-checks" value="" edge="1" parent="1" source="bid-entry" target="bid-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-bid-checks-bid-valid" value="" edge="1" parent="1" source="bid-checks" target="bid-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-bid-valid-bid-failure" value="[No]" edge="1" parent="1" source="bid-valid" target="bid-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-bid-valid-bid-effects" value="[Yes]" edge="1" parent="1" source="bid-valid" target="bid-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-result" value="Emit BidPlaced&lt;br&gt;One highest bid is stored per NFT" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="bid-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-bid-effects-bid-result" value="" edge="1" parent="1" source="bid-effects" target="bid-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bid-source" value="NetPunksMarket.sol:79–85" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="bid-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="1210" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-title" value="06  Withdraw the highest bid" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="withdraw-bid-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-entry" value="withdrawBid(id) · nonReentrant" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-bid-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-checks" value="Caller equals the current bids[id].bidder&lt;br&gt;Only the current highest bidder may cancel&lt;br&gt;Otherwise revert with NotBidder" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-bid-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-bid-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-bid-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-effects" value="Call _refundBid(id)&lt;br&gt;Delete the current bid&lt;br&gt;Credit its amount to the caller&lt;br&gt;This function does not send ETH to the wallet" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-bid-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-bid-entry-withdraw-bid-checks" value="" edge="1" parent="1" source="withdraw-bid-entry" target="withdraw-bid-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-bid-checks-withdraw-bid-valid" value="" edge="1" parent="1" source="withdraw-bid-checks" target="withdraw-bid-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-bid-valid-withdraw-bid-failure" value="[No]" edge="1" parent="1" source="withdraw-bid-valid" target="withdraw-bid-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-bid-valid-withdraw-bid-effects" value="[Yes]" edge="1" parent="1" source="withdraw-bid-valid" target="withdraw-bid-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-result" value="Bid cancelled; emit BidWithdrawn&lt;br&gt;Call withdraw() separately to receive ETH" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-bid-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-bid-effects-withdraw-bid-result" value="" edge="1" parent="1" source="withdraw-bid-effects" target="withdraw-bid-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-bid-source" value="NetPunksMarket.sol:87–90" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="withdraw-bid-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="50" y="2130" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-title" value="07  Accept the highest bid" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="accept-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-entry" value="acceptBid(id, minimumPrice) · NR" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="accept-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-checks" value="Caller owns the NFT and approves the market&lt;br&gt;A highest bid exists; bidder is not the caller&lt;br&gt;Bid amount ≥ minimumPrice&lt;br&gt;Use the highest bid at execution time" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="accept-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="accept-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="accept-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-effects" value="Delete bids[id] and listings[id]&lt;br&gt;Seller pendingWithdrawals += bid amount&lt;br&gt;safeTransferFrom: seller → highest bidder&lt;br&gt;Escrowed bid becomes seller withdrawal credit" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="accept-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-accept-entry-accept-checks" value="" edge="1" parent="1" source="accept-entry" target="accept-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-accept-checks-accept-valid" value="" edge="1" parent="1" source="accept-checks" target="accept-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-accept-valid-accept-failure" value="[No]" edge="1" parent="1" source="accept-valid" target="accept-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-accept-valid-accept-effects" value="[Yes]" edge="1" parent="1" source="accept-valid" target="accept-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-outcome" value="Safe NFT transfer successful?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="accept-panel">
+          <mxGeometry x="50" y="695" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-result" value="Emit BidAccepted&lt;br&gt;The seller withdraws in a separate call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="accept-panel">
+          <mxGeometry x="25" y="810" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-accept-effects-accept-outcome" value="" edge="1" parent="1" source="accept-effects" target="accept-outcome" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-accept-outcome-accept-result" value="[Yes]" edge="1" parent="1" source="accept-outcome" target="accept-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-accept-outcome-accept-failure" value="[No]" edge="1" parent="1" source="accept-outcome" target="accept-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505.0" y="2865.0" />
+              <mxPoint x="505.0" y="2615.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="accept-source" value="NetPunksMarket.sol:93–105" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="accept-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="600" y="2130" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-title" value="08  Withdraw market funds" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-entry" value="withdraw() · nonReentrant" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-checks" value="amount = pendingWithdrawals[msg.sender]&lt;br&gt;Require amount &amp;gt; 0&lt;br&gt;Otherwise revert with NothingToWithdraw" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-valid" value="Checks pass?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-failure" value="revert&lt;br&gt;Roll back this call" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#fbeeee;strokeColor=#b87676;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-effects" value="Zero the caller pendingWithdrawals first&lt;br&gt;Then call msg.sender with amount ETH&lt;br&gt;Includes sale proceeds and credited bid refunds" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-entry-withdraw-checks" value="" edge="1" parent="1" source="withdraw-entry" target="withdraw-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-checks-withdraw-valid" value="" edge="1" parent="1" source="withdraw-checks" target="withdraw-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-valid-withdraw-failure" value="[No]" edge="1" parent="1" source="withdraw-valid" target="withdraw-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-valid-withdraw-effects" value="[Yes]" edge="1" parent="1" source="withdraw-valid" target="withdraw-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-outcome" value="ETH payment successful?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="50" y="695" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw-result" value="Emit Withdrawn&lt;br&gt;Wallet receives all its pending funds" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="25" y="810" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-effects-withdraw-outcome" value="" edge="1" parent="1" source="withdraw-effects" target="withdraw-outcome" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-outcome-withdraw-result" value="[Yes]" edge="1" parent="1" source="withdraw-outcome" target="withdraw-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-outcome-withdraw-failure" value="[No]" edge="1" parent="1" source="withdraw-outcome" target="withdraw-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1055.0" y="2865.0" />
+              <mxPoint x="1055.0" y="2615.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="withdraw-source" value="NetPunksMarket.sol:115–123" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="withdraw-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-panel" value="" style="rounded=1;arcSize=4;container=1;pointerEvents=0;html=1;fillColor=#ffffff;strokeColor=#c5d1df;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="2130" width="540" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-title" value="09  Shared internal refund routine" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#486078;fontStyle=1;" vertex="1" parent="refund-panel">
+          <mxGeometry x="20" y="15" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-entry" value="_refundBid(id) · private" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="refund-panel">
+          <mxGeometry x="25" y="75" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-checks" value="Read bids[id]&lt;br&gt;Is bidder != address(0)?&lt;br&gt;Called by buy, placeBid and withdrawBid" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="refund-panel">
+          <mxGeometry x="25" y="175" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-valid" value="Does an old bid exist?" style="rhombus;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#fff6df;strokeColor=#b99b57;strokeWidth=1.4;spacing=10;" vertex="1" parent="refund-panel">
+          <mxGeometry x="50" y="355" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-failure" value="No old bid&lt;br&gt;Return immediately" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=14;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="refund-panel">
+          <mxGeometry x="390" y="360" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-effects" value="Delete bids[id]&lt;br&gt;Credit amount to the original bidder&lt;br&gt;Emit BidWithdrawn&lt;br&gt;Do not send ETH to the wallet" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=16;fontColor=#162b42;fillColor=#edf4fc;strokeColor=#6c8ebf;strokeWidth=1.4;spacing=10;" vertex="1" parent="refund-panel">
+          <mxGeometry x="25" y="510" width="330" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refund-entry-refund-checks" value="" edge="1" parent="1" source="refund-entry" target="refund-checks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refund-checks-refund-valid" value="" edge="1" parent="1" source="refund-checks" target="refund-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refund-valid-refund-failure" value="[No]" edge="1" parent="1" source="refund-valid" target="refund-failure" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refund-valid-refund-effects" value="[Yes]" edge="1" parent="1" source="refund-valid" target="refund-effects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-result" value="Return to the caller within the same tx&lt;br&gt;Bidder calls withdraw() separately later" style="rounded=1;arcSize=14;html=1;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#162b42;fillColor=#eaf5ef;strokeColor=#6b9a81;strokeWidth=1.4;spacing=10;" vertex="1" parent="refund-panel">
+          <mxGeometry x="25" y="755" width="330" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refund-effects-refund-result" value="" edge="1" parent="1" source="refund-effects" target="refund-result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Arial;fontSize=13;strokeColor=#486a90;strokeWidth=1.4;endArrow=block;endSize=7;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="refund-source" value="NetPunksMarket.sol:107–113" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=11;fontColor=#486078;fontStyle=0;" vertex="1" parent="refund-panel">
+          <mxGeometry x="20" y="870" width="500" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="Blue: read / action. Yellow: decision. Green: return / success. Red: revert. Panels have independent entry points; numbering is an index." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#486078;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="3025" width="1640" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="atomicity" value="Any failing step reverts state, transfers and logs in that transaction. A prior approval in a separate transaction remains. Source: contracts/; 2026-10-20." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontColor=#486078;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="3070" width="1640" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

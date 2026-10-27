@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="09-accept-bid-activity" name="09  Accept the Highest Bid">
+    <mxGraphModel dx="1740" dy="1630" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1630" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="09  Accept the Highest Bid" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontColor=#162b42;spacing=0;fontFamily=Arial;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Activity diagram · Precondition: current holder&amp;#x27;s wallet, an active highest bid, and approval for the market to transfer the NFT." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;aspect=fixed;fillColor=#162b42;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="825" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="review" value="Holder · Review the highest bid&lt;br&gt;Confirm the acceptance amount" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="approved" value="Market already&lt;br&gt;approved?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="400" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="approve" value="Confirm approve(market, id)&lt;br&gt;Approve this NFT only" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="410" width="390" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="send" value="Confirm acceptBid(id, minimumPrice)&lt;br&gt;Minimum price = the confirmed bid" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="650" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="approved-merge" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#ffffff;strokeColor=#486a90;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="820" y="580" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="valid" value="Owner, approval,&lt;br&gt;and bid valid?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="850" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="settle" value="Market · Delete bid and listing&lt;br&gt;Credit seller&amp;#x27;s pending balance" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1060" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="transfer" value="Safely transfer to current highest bidder&lt;br&gt;Refresh; seller may withdraw later (10)" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1220" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1420" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="failure" value="Invalid owner, approval, minimum price,&lt;br&gt;or withdrawn bid: revert transaction" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#fbeeee;strokeColor=#b87676;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="860" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="failure-end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="1015" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-valid-failure" value="[Invalid]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="valid" target="failure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-failure-failure-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="failure" target="failure-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-start-review" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="start" target="review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-review-approved" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="review" target="approved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-approved-approve" value="[No]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="approved" target="approve">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-approved-approved-merge" value="[Yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="approved" target="approved-merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-approve-approved-merge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="approve" target="approved-merge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1425" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-approved-merge-send" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="approved-merge" target="send">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-send-valid" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="send" target="valid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-valid-settle" value="[Yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="valid" target="settle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-settle-transfer" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="settle" target="transfer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-transfer-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="transfer" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="accept-rules" value="Minimum-Price Protection&lt;br&gt;&lt;br&gt;Bid amount must be at least the confirmed minimum; the bidder must not be the holder.&lt;br&gt;&lt;br&gt;Confirmation sets a minimum price, not a fixed bidder. If a higher bid replaces it, execution may accept that higher bid.&lt;br&gt;&lt;br&gt;Settlement uses the ETH already held in bid escrow. No extra payment transaction is needed from the buyer." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="480" width="370" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="● Initial  |  ◉ Activity final  |  Rounded box: action  |  Diamond: decision / merge  |  [ ]: guard  |  Rake marker: call behavior action" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1535" width="1600" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="convention" value="Blue: action  |  Yellow: decision  |  Green: result  |  Red: failure. Confirm transactions as in Diagram 03; checks use execution-time state." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1569" width="1600" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

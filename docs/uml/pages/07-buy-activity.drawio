@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="07-buy-activity" name="07  按挂单价购买 NFT">
+    <mxGraphModel dx="1740" dy="1580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1580" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="07  按挂单价购买 NFT" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=32;fontStyle=1;fontColor=#162b42;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="活动图 · 前置条件：钱包已连接；买家不是当前卖家；若为指定买家挂单，钱包地址必须匹配。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;aspect=fixed;fillColor=#162b42;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="825" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="view" value="用户 · 打开已上架 NFT 详情&lt;br&gt;核对售价与指定买家限制" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="send" value="提交并确认 buy(id, expectedPrice)&lt;br&gt;携带页面确认的精确售价（见图 03）" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="420" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="valid" value="挂单、价格与买家有效？" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="690" y="690" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="settle" value="市场合约 · 删除挂单和现有出价&lt;br&gt;卖家收入计入待提现余额" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="910" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="refund" value="市场合约 · 若有最高出价&lt;br&gt;将全额出价退回原出价者待提现余额" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1070" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="transfer" value="NFT 安全转给买家；前端刷新&lt;br&gt;卖家／原出价者按需另行提现（图 10）" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1250" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1400" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="failure" value="挂单失效、价格变化或买家不符&lt;br&gt;拒绝交易，刷新后重新确认" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#fbeeee;strokeColor=#b87676;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="700" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="failure-end" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="855" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-valid-failure" value="[不通过]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="valid" target="failure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-failure-failure-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="failure" target="failure-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-start-view" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="start" target="view">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-view-send" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="view" target="send">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-send-valid" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="send" target="valid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-valid-settle" value="[是]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="valid" target="settle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-settle-refund" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="settle" target="refund">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refund-transfer" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="refund" target="transfer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-transfer-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="transfer" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="buy-rules" value="执行时校验&lt;br&gt;&lt;br&gt;挂单仍有效，市场仍获转移授权。&lt;br&gt;预期价格与挂单现价一致。&lt;br&gt;支付的 ETH 与挂单价格一致。&lt;br&gt;买家不是卖家。&lt;br&gt;指定买家地址匹配（若设置）。&lt;br&gt;&lt;br&gt;若买家本身是最高出价者，购买时&lt;br&gt;仍支付完整售价；旧出价另计待提现。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="350" width="370" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="atomic" value="原子结算&lt;br&gt;&lt;br&gt;结算、退款记账与 NFT 转移处于&lt;br&gt;同一笔交易；任何一步失败全部回滚。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="980" width="370" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="● 初始节点    ◉ 活动终止    圆角框：动作    菱形：判断／合并    [ ]：分支条件    带耙形标记的框：调用子活动" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1485" width="1600" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="convention" value="蓝：操作   黄：判断   绿：成功结果   红：失败处理；“交易确认”均遵循图 03，链上校验以交易执行时状态为准。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1519" width="1600" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

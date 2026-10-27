@@ -1,0 +1,23 @@
+# Free classroom preview. No paid services or disks are provisioned by this file.
+services:
+  - type: web
+    name: netpunks-classroom
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm run start:hosted
+    healthCheckPath: /api/live
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: APP_NETWORK
+        value: sepolia
+      - key: HOST
+        value: 0.0.0.0
+      - key: SEPOLIA_RPC_URL
+        value: https://ethereum-sepolia-rpc.publicnode.com
+      - key: RPC_LOG_BLOCK_RANGE
+        value: "2000"

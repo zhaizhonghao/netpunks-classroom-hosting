@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="04-wallet-activity" name="04  Connect and Disconnect a Wallet">
+    <mxGraphModel dx="1740" dy="1470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1470" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="04  Connect and Disconnect a Wallet" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontColor=#162b42;spacing=0;fontFamily=Arial;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Activity diagram · MetaMask or local demo accounts. Demo mode requires localhost / 127.0.0.1 and Hardhat chain 31337." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;aspect=fixed;fillColor=#162b42;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="825" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="entry" value="User · Click Connect Wallet&lt;br&gt;Choose a connection method" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mode" value="Connection&lt;br&gt;method?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="400" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="injected" value="Wallet · Allow account access&lt;br&gt;Switch chain; add network if missing" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="570" y="590" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="demo" value="Frontend · Check hostname / chainId&lt;br&gt;Get a local demo signer via RPC" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="590" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ready" value="Connected on&lt;br&gt;the target chain?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="790" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="session" value="Frontend · Set signer; save session choice&lt;br&gt;Load ETH, NFTs, bids, pending balance" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="980" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="disconnect-choice" value="Disconnect&lt;br&gt;wallet?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1120" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="disconnect" value="User · Disconnect wallet&lt;br&gt;Clear frontend signer and session choice" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="1130" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1300" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="failure" value="Explain missing wallet, rejection,&lt;br&gt;or wrong chain; return to connection" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#fbeeee;strokeColor=#b87676;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="800" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="failure-end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="955" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ready-failure" value="[No]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="ready" target="failure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-failure-failure-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="failure" target="failure-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-start-entry" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="start" target="entry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-entry-mode" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="entry" target="mode">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mode-injected" value="[MetaMask]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="mode" target="injected">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mode-demo" value="[Local demo]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="mode" target="demo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1400" y="455" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-injected-ready" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="injected" target="ready">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-demo-ready" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.1;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="demo" target="ready">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="740" />
+              <mxPoint x="1100" y="826" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ready-session" value="[Yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="ready" target="session">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-session-disconnect-choice" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="session" target="disconnect-choice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-disconnect-choice-disconnect" value="[Yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="disconnect-choice" target="disconnect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-disconnect-choice-end" value="[No]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="disconnect-choice" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-disconnect-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="disconnect" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1420" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wallet-note" value="Connection Semantics&lt;br&gt;&lt;br&gt;Connection provides a wallet address and signing capability.&lt;br&gt;&lt;br&gt;Disconnection only clears local connection state. NFTs, funds, and on-chain approvals remain.&lt;br&gt;&lt;br&gt;A MetaMask account or chain change disconnects the frontend and requests reconnection.&lt;br&gt;&lt;br&gt;If minting starts without a wallet, connect first, then click Mint again." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="300" width="370" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="● Initial  |  ◉ Activity final  |  Rounded box: action  |  Diamond: decision / merge  |  [ ]: guard  |  Rake marker: call behavior action" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1375" width="1600" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="convention" value="Blue: action  |  Yellow: decision  |  Green: result  |  Red: failure. Confirm transactions as in Diagram 03; checks use execution-time state." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1409" width="1600" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

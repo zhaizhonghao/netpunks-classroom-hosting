@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="03-overall-activity" name="03  系统使用总流程与交易确认">
+    <mxGraphModel dx="1740" dy="1660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1660" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03  系统使用总流程与交易确认" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=32;fontStyle=1;fontColor=#162b42;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="活动图 · 初次浏览无需钱包；从铸造、买卖、出价、转赠或管理入口发起链上操作。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;aspect=fixed;fillColor=#162b42;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="825" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="browse" value="用户 · 浏览市场、详情和动态&lt;br&gt;搜索／筛选／排序／分页" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="need-tx" value="需要链上操作？" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="690" y="390" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="public" value="用户 · 收藏、切换语言或主题&lt;br&gt;保存本机偏好" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="400" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="public-end" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="545" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="connect" value="用户 · 连接或确认钱包与网络&lt;br&gt;（连接过程见图 04）" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="550" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="choose" value="用户 · 选择功能并核对参数&lt;br&gt;（业务规则见图 05—12）" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="690" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="confirm" value="钱包 · 确认并提交交易&lt;br&gt;等待交易回执" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="830" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="confirmed" value="交易成功？" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="690" y="970" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="refresh" value="前端 · 请求刷新；Express 同步索引&lt;br&gt;重新读取资产、余额与市场状态" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1140" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="done" value="前端 · 显示更新后的结果" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1290" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1430" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="failure" value="前端 · 显示取消或失败原因&lt;br&gt;用户修正／刷新后重新发起" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#fbeeee;strokeColor=#b87676;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="980" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="failure-end" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="1135" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-confirmed-failure" value="[否／拒绝／异常]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="confirmed" target="failure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-failure-failure-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="failure" target="failure-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-start-browse" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="start" target="browse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-browse-need-tx" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="browse" target="need-tx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-need-tx-public" value="[否]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="need-tx" target="public">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-public-public-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="public" target="public-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-need-tx-connect" value="[是]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="need-tx" target="connect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-connect-choose" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="connect" target="choose">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-choose-confirm" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="choose" target="confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-confirm-confirmed" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="confirm" target="confirmed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-confirmed-refresh" value="[是]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="confirmed" target="refresh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refresh-done" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="refresh" target="done">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-done-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="done" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="public-note" value="公开查询与偏好&lt;br&gt;&lt;br&gt;浏览接口返回已铸造资产及其状态。&lt;br&gt;&lt;br&gt;简体中文／English 即时切换。&lt;br&gt;收藏、主题与语言写入 localStorage。&lt;br&gt;&lt;br&gt;个人资产、我的挂单与我的出价，&lt;br&gt;连接钱包后按当前地址查询。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="260" width="370" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="tx-note" value="所有链上流程的共同约定&lt;br&gt;&lt;br&gt;钱包可能拒绝确认；网络或余额可能&lt;br&gt;不满足要求，合约也可能拒绝执行。&lt;br&gt;&lt;br&gt;回滚的交易不改变该笔交易的业务&lt;br&gt;状态；链上失败仍可能消耗 Gas。&lt;br&gt;&lt;br&gt;若先授权再执行业务，授权是独立&lt;br&gt;交易，后续失败不会撤销已完成授权。&lt;br&gt;&lt;br&gt;交易已确认但刷新失败时，先刷新&lt;br&gt;状态核实结果，再决定是否重试。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="760" width="370" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="● 初始节点    ◉ 活动终止    圆角框：动作    菱形：判断／合并    [ ]：分支条件    带耙形标记的框：调用子活动" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1565" width="1600" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="convention" value="蓝：操作   黄：判断   绿：成功结果   红：失败处理；“交易确认”均遵循图 03，链上校验以交易执行时状态为准。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1599" width="1600" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

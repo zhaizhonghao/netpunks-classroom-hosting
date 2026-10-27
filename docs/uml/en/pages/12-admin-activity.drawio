@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="12-admin-activity" name="12  Mint Administration and Proceeds">
+    <mxGraphModel dx="1740" dy="1660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1660" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="12  Mint Administration and Proceeds" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontColor=#162b42;spacing=0;fontFamily=Arial;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Activity diagram · Precondition: NetPunks owner wallet. The contract enforces onlyOwner in addition to the frontend gate." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;aspect=fixed;fillColor=#162b42;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="825" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="entry" value="Admin · Open issuance management&lt;br&gt;Read mint status, price, and proceeds" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="owner" value="Current wallet is&lt;br&gt;contract owner?" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#fff6df;strokeColor=#b99b57;spacing=10;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="690" y="410" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="settings" value="Admin · Change mint status / price&lt;br&gt;Confirm setMintSettings(open, price)" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="540" y="620" width="410" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw" value="Admin · Check mint proceeds &amp;gt; 0&lt;br&gt;Confirm withdrawMintProceeds()" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.callBehAct;align=center;fillColor=#edf4fc;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="620" width="430" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="saved" value="NFT contract · Recheck owner&lt;br&gt;Update mint availability and price" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="540" y="870" width="410" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="paid" value="NFT contract · Check owner / proceeds&lt;br&gt;Zero proceeds, then send ETH to owner" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="870" width="430" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="refresh" value="Frontend · Refresh settings / balances&lt;br&gt;New status / price applies to later mints" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#eaf5ef;strokeColor=#6b9a81;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1170" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="result-merge" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rhombus;fillColor=#ffffff;strokeColor=#486a90;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1090" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="denied" value="Frontend · Request the admin wallet&lt;br&gt;Contract rejects non-owner admin calls" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=1;arcSize=18;fillColor=#fbeeee;strokeColor=#b87676;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="420" width="390" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="denied-end" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=mxgraph.sysml.actFinal;fillColor=#ffffff;strokeColor=#162b42;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="245" y="580" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-start-entry" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="start" target="entry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-entry-owner" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="entry" target="owner">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-owner-denied" value="[No]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="owner" target="denied">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-denied-denied-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="denied" target="denied-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-owner-settings" value="[Yes: update settings]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="owner" target="settings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-owner-withdraw" value="[Yes: withdraw proceeds]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="owner" target="withdraw">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1405" y="465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-settings-saved" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="settings" target="saved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-withdraw-paid" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="withdraw" target="paid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-saved-result-merge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="saved" target="result-merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-paid-result-merge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="paid" target="result-merge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1405" y="1110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-result-merge-refresh" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="result-merge" target="refresh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-refresh-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;fontSize=16;" edge="1" parent="1" source="refresh" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="admin-scope" value="Admin Scope and Failures&lt;br&gt;&lt;br&gt;Fixed collection cap: 10,000 NFTs.&lt;br&gt;Fixed lifetime mint limit: 5 per wallet.&lt;br&gt;&lt;br&gt;Mint proceeds and market pending funds are separate. This admin entry withdraws mint proceeds only.&lt;br&gt;&lt;br&gt;No proceeds or failed payment causes rejection / revert. A failed payment preserves mint proceeds.&lt;br&gt;&lt;br&gt;Use Diagram 03 for rejection, transaction failure, or refresh errors." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="800" width="370" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="● Initial  |  ◉ Activity final  |  Rounded box: action  |  Diamond: decision / merge  |  [ ]: guard  |  Rake marker: call behavior action" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1565" width="1600" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="convention" value="Blue: action  |  Yellow: decision  |  Green: result  |  Red: failure. Confirm transactions as in Diagram 03; checks use execution-time state." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1599" width="1600" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

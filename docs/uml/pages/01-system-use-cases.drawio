@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="01-system-use-cases" name="01  系统用例图 · 总览">
+    <mxGraphModel dx="1740" dy="1320" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1320" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="01  系统用例图 · 总览" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=32;fontStyle=1;fontColor=#162b42;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="系统边界包含 Vue 前端、Express 查询服务与两份智能合约；角色表示使用条件，同一钱包可承担多个角色。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="system" value="NETPUNKS 系统" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;rounded=0;container=1;pointerEvents=0;fillColor=none;strokeColor=#8a9db2;align=center;verticalAlign=top;spacingTop=18;fontSize=23;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="300" width="1460" height="860" as="geometry" />
+        </mxCell>
+        <mxCell id="visitor" value="访客" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;labelWidth=260;fillColor=#ffffff;strokeColor=#486a90;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="410" y="185" width="50" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="已连接钱包用户" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;labelWidth=260;fillColor=#ffffff;strokeColor=#486a90;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="890" y="185" width="50" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" value="发行管理员" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;labelWidth=260;fillColor=#ffffff;strokeColor=#486a90;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="185" width="50" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-visitor" value="泛化" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;edgeStyle=none;endArrow=block;endFill=0;endSize=16;" edge="1" parent="1" source="user" target="visitor">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-admin-user" value="泛化" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;edgeStyle=none;endArrow=block;endFill=0;endSize=16;" edge="1" parent="1" source="admin" target="user">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-browse" value="浏览市场与 NFT 详情" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="100" y="90" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-visitor-uc-browse" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="visitor" target="uc-browse">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="285" />
+              <mxPoint x="282" y="285" />
+              <mxPoint x="282" y="437" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-activity" value="查询统计与市场动态" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="100" y="260" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-visitor-uc-activity" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="visitor" target="uc-activity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="285" />
+              <mxPoint x="267" y="285" />
+              <mxPoint x="267" y="607" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-preferences" value="收藏与界面偏好&lt;br&gt;（语言／主题）" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="100" y="430" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-visitor-uc-preferences" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="visitor" target="uc-preferences">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="285" />
+              <mxPoint x="252" y="285" />
+              <mxPoint x="252" y="777" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-connect" value="连接与断开钱包" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="100" y="600" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-visitor-uc-connect" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="visitor" target="uc-connect">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="285" />
+              <mxPoint x="237" y="285" />
+              <mxPoint x="237" y="947" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-mint" value="铸造 NFT" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="580" y="90" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-uc-mint" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="user" target="uc-mint">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="285" />
+              <mxPoint x="762" y="285" />
+              <mxPoint x="762" y="437" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-portfolio" value="查询个人资产与出价" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="580" y="230" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-uc-portfolio" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="user" target="uc-portfolio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="285" />
+              <mxPoint x="747" y="285" />
+              <mxPoint x="747" y="577" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-trade" value="参与市场交易&lt;br&gt;（详见图 02）" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="580" y="370" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-uc-trade" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="user" target="uc-trade">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="285" />
+              <mxPoint x="732" y="285" />
+              <mxPoint x="732" y="717" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-transfer" value="转赠 NFT" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="580" y="510" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-uc-transfer" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="user" target="uc-transfer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="285" />
+              <mxPoint x="717" y="285" />
+              <mxPoint x="717" y="857" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-withdraw" value="提取市场余额" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="580" y="650" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-uc-withdraw" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="user" target="uc-withdraw">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="285" />
+              <mxPoint x="702" y="285" />
+              <mxPoint x="702" y="997" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-settings" value="调整发行开关与价格" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="1060" y="90" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-admin-uc-settings" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="admin" target="uc-settings">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="285" />
+              <mxPoint x="1242" y="285" />
+              <mxPoint x="1242" y="437" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-proceeds" value="提取铸造收入" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;" vertex="1" parent="system">
+          <mxGeometry x="1060" y="260" width="250" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-admin-uc-proceeds" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=PingFang SC;fontSize=17;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitX=0.15;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="admin" target="uc-proceeds">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="285" />
+              <mxPoint x="1227" y="285" />
+              <mxPoint x="1227" y="607" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="scope-note" value="角色与权限&lt;br&gt;&lt;br&gt;已连接钱包用户继承访客能力；&lt;br&gt;发行管理员继承钱包用户能力。&lt;br&gt;&lt;br&gt;管理员以 NFT 合约 owner 为准。&lt;br&gt;&lt;br&gt;收藏、语言和主题保存在本机。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="740" width="310" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="uml-legend" value="实线：参与用例     空心三角：泛化（指向一般角色）     椭圆：用例     外框：系统边界" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=17;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1208" width="1600" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="scope-foot" value="连接钱包是链上操作的前置条件；授权仅在需要时发生，详见活动图，不将其画成所有交易无条件 include。" style="html=1;whiteSpace=wrap;fontFamily=PingFang SC;fontSize=20;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=17;fontStyle=0;fontColor=#627489;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1248" width="1600" height="28" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

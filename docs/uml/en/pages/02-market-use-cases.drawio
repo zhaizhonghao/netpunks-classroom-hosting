@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="30.2.6">
+  <diagram id="02-market-use-cases" name="02  Market Use Cases · Details">
+    <mxGraphModel dx="1740" dy="1300" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1740" pageHeight="1300" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="02  Market Use Cases · Details" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontColor=#162b42;spacing=0;fontFamily=Arial;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="70" y="38" width="1580" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Precondition: a wallet on the target chain. Sellers own the NFT; bidders do not. Withdrawal requires a pending balance." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="99" width="1580" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="header-rule" value="" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=0;fillColor=#ced8e4;strokeColor=none;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="1600" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="system" value="NETPUNKS Marketplace" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;rounded=0;container=1;pointerEvents=0;fillColor=none;strokeColor=#8a9db2;align=center;verticalAlign=top;spacingTop=18;fontStyle=1;fontFamily=Arial;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry x="210" y="300" width="1460" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="seller" value="Holder / Seller" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;labelWidth=260;fillColor=#ffffff;strokeColor=#486a90;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="410" y="185" width="50" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="buyer" value="Buyer / Bidder" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;labelWidth=260;fillColor=#ffffff;strokeColor=#486a90;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="890" y="185" width="50" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="creditor" value="User with Pending Balance" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;labelWidth=260;fillColor=#ffffff;strokeColor=#486a90;fontFamily=Arial;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="185" width="50" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-list" value="List / Update Price&lt;br&gt;(Optional Private Buyer)" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="system">
+          <mxGeometry x="100" y="100" width="250" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-seller-uc-list" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;fontFamily=Arial;fontSize=16;exitX=0;exitY=1;" edge="1" parent="1" source="seller" target="uc-list">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="265" />
+              <mxPoint x="280" y="265" />
+              <mxPoint x="280" y="452" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-cancel" value="Cancel Listing" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="system">
+          <mxGeometry x="100" y="320" width="250" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-seller-uc-cancel" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;fontFamily=Arial;fontSize=16;exitX=0;exitY=1;" edge="1" parent="1" source="seller" target="uc-cancel">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="265" />
+              <mxPoint x="262" y="265" />
+              <mxPoint x="262" y="672" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-accept" value="Accept Highest Bid" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="system">
+          <mxGeometry x="100" y="540" width="250" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-seller-uc-accept" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;fontFamily=Arial;fontSize=16;exitX=0;exitY=1;" edge="1" parent="1" source="seller" target="uc-accept">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="265" />
+              <mxPoint x="244" y="265" />
+              <mxPoint x="244" y="892" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-buy" value="Buy at Listed Price" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="system">
+          <mxGeometry x="580" y="100" width="250" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buyer-uc-buy" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;fontFamily=Arial;fontSize=16;exitX=0;exitY=1;" edge="1" parent="1" source="buyer" target="uc-buy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="265" />
+              <mxPoint x="760" y="265" />
+              <mxPoint x="760" y="452" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-bid" value="Place / Raise Bid" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="system">
+          <mxGeometry x="580" y="320" width="250" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buyer-uc-bid" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;fontFamily=Arial;fontSize=16;exitX=0;exitY=1;" edge="1" parent="1" source="buyer" target="uc-bid">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="265" />
+              <mxPoint x="742" y="265" />
+              <mxPoint x="742" y="672" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-withdraw-bid" value="Withdraw Current&lt;br&gt;Highest Bid" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="system">
+          <mxGeometry x="580" y="540" width="250" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-buyer-uc-withdraw-bid" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;fontFamily=Arial;fontSize=16;exitX=0;exitY=1;" edge="1" parent="1" source="buyer" target="uc-withdraw-bid">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="265" />
+              <mxPoint x="724" y="265" />
+              <mxPoint x="724" y="892" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-withdraw" value="Withdraw Pending Balance" style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;ellipse;fillColor=#ffffff;strokeColor=#6c8ebf;spacing=12;fontFamily=Arial;fontSize=18;" vertex="1" parent="system">
+          <mxGeometry x="1060" y="100" width="250" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-creditor-uc-withdraw" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;strokeColor=#486a90;fontColor=#162b42;labelBackgroundColor=#ffffff;endArrow=open;endSize=10;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;fontFamily=Arial;fontSize=16;exitX=0;exitY=1;" edge="1" parent="1" source="creditor" target="uc-withdraw">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="265" />
+              <mxPoint x="1240" y="265" />
+              <mxPoint x="1240" y="452" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="funds" value="Funds Flow&lt;br&gt;&lt;br&gt;Purchase or bid acceptance:&lt;br&gt;Seller proceeds → pending balance.&lt;br&gt;&lt;br&gt;Outbid, withdrawn, or purchase-refunded bids:&lt;br&gt;Bid amount → original bidder&amp;#x27;s pending balance.&lt;br&gt;&lt;br&gt;Withdraw funds in a separate action." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;shape=note;size=18;backgroundOutline=1;fillColor=#f6f8fb;strokeColor=#c5d1df;align=left;verticalAlign=top;spacing=20;fontFamily=Arial;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="610" width="310" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="market-legend" value="Each NFT has one active highest bid. The full bid amount is held in ETH escrow; there is no automatic expiry." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1158" width="1600" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="market-foot" value="Buying, accepting bids, withdrawing bids, and withdrawing funds are separate use cases. Settlement does not automatically trigger withdrawal." style="html=1;whiteSpace=wrap;fontColor=#162b42;strokeWidth=1.6;text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=0;fontColor=#627489;spacing=0;fontFamily=Arial;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1200" width="1600" height="28" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
